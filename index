@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Shang Experience ✨</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Lora',Georgia,serif;background:#08051a;color:#f0e6ff;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(1px 1px at 10% 15%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 25% 60%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 40% 30%,rgba(255,255,255,.8) 0%,transparent 100%),radial-gradient(1px 1px at 55% 80%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 70% 20%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 85% 50%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 15% 85%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 30% 40%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 60% 55%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 75% 70%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 90% 35%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 5% 45%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 45% 10%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 20% 75%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 65% 90%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 80% 5%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 35% 95%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 50% 65%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 95% 80%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 12% 55%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 88% 15%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 42% 48%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 72% 38%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 18% 28%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 58% 12%,rgba(255,255,255,.5) 0%,transparent 100%);pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;inset:0;background:radial-gradient(1px 1px at 22% 33%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 47% 72%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 68% 18%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 83% 62%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 38% 88%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 93% 44%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 7% 92%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 52% 25%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 77% 82%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 33% 58%,rgba(255,255,255,.7) 0%,transparent 100%);pointer-events:none;z-index:0;animation:twinkle 4s ease-in-out infinite alternate}
+@keyframes twinkle{0%{opacity:.4}100%{opacity:1}}
+
+.moon{position:fixed;top:28px;right:44px;width:48px;height:48px;cursor:pointer;z-index:10}
+.moon::before{content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 38% 35%,#fefce8,#fde68a 40%,#f59e0b);box-shadow:0 0 18px rgba(251,191,36,.35)}
+.moon::after{content:'';position:absolute;top:4px;left:9px;width:32px;height:32px;border-radius:50%;background:#08051a;opacity:.72}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#a855f7,#f472b6);z-index:999;width:0%;transition:width .6s ease}
+#clbl{position:fixed;top:10px;right:108px;font-size:.7rem;letter-spacing:.12em;color:rgba(255,255,255,.25);z-index:999}
+#ndots{position:fixed;left:12px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:999}
+.nd{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.12);transition:all .35s}
+.nd.done{background:rgba(168,85,247,.65)}
+.nd.cur{background:#f472b6;transform:scale(1.6)}
+
+.scr{display:none;position:relative;z-index:1;min-height:100vh;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1.5rem;text-align:center}
+.scr.on{display:flex}
+
+.ct{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.6rem);color:#f472b6;margin-bottom:1.2rem;text-shadow:0 0 24px rgba(244,114,182,.3)}
+.mg{font-size:clamp(.92rem,2vw,1.15rem);color:#ddd0f0;line-height:1.9;max-width:560px;margin:0 auto}
+.btn{display:inline-block;margin-top:1.8rem;padding:.8rem 2.2rem;border:1.5px solid #f472b6;background:transparent;color:#f472b6;font-family:'Lora',serif;font-size:.92rem;letter-spacing:.07em;cursor:pointer;border-radius:50px;transition:all .3s}
+.btn:hover{background:#f472b6;color:#08051a;transform:scale(1.06);box-shadow:0 0 22px rgba(244,114,182,.4)}
+.hid{display:none!important}
+
+.ql{display:block;font-family:'Playfair Display',serif;font-size:clamp(1.1rem,3vw,1.85rem);color:#fefce8;line-height:2.2;opacity:0;transform:translateY(14px);transition:opacity .9s ease,transform .9s ease}
+.ql.vis{opacity:1;transform:translateY(0)}
+.ql.pink{color:#f9a8d4;font-style:italic}
+
+#fw{position:relative;width:180px;height:180px;margin:1.5rem auto;cursor:pointer;user-select:none}
+.pt{position:absolute;width:50px;height:75px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(ellipse,#f9a8d4 30%,#ec4899 100%);top:50%;left:50%;transform-origin:25px 75px;transition:all 1.2s cubic-bezier(.23,1,.32,1)}
+.fc{position:absolute;width:42px;height:42px;border-radius:50%;background:radial-gradient(circle,#fde68a,#f59e0b);top:50%;left:50%;transform:translate(-50%,-50%);box-shadow:0 0 16px rgba(251,191,36,.5);transition:all .5s;pointer-events:none}
+#fq{font-style:italic;color:#f9a8d4;font-size:1rem;line-height:1.8;max-width:480px;margin:1rem auto 0;opacity:0;transition:opacity .8s;min-height:1.8rem}
+
+.ug{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin:1.2rem 0}
+.ub{padding:.75rem 1.4rem;border:1.5px solid rgba(255,255,255,.18);border-radius:13px;background:rgba(255,255,255,.04);color:#e2d4f0;font-family:'Lora',serif;font-size:.9rem;cursor:pointer;transition:all .3s}
+.ub:hover{border-color:#a855f7;background:rgba(168,85,247,.14);transform:translateY(-3px)}
+#uc{width:100%;max-width:540px;height:240px;display:block;margin:.8rem auto;border-radius:16px;background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07)}
+#ur{font-style:italic;color:#fde68a;font-size:1rem;line-height:1.8;max-width:500px;margin:.6rem auto 0;opacity:0;transition:opacity .8s}
+
+.ch3b{position:relative;min-height:240px;max-width:620px;width:100%;overflow:hidden;border-radius:18px;background:rgba(255,255,255,.02);border:.5px solid rgba(255,255,255,.05);margin:1rem auto;display:flex;align-items:center;justify-content:center}
+.fl{position:absolute;font-size:clamp(.78rem,1.6vw,.92rem);color:#c4b5fd;opacity:0;pointer-events:none;animation:drift 5.5s ease-in-out infinite}
+@keyframes drift{0%{opacity:0;transform:translateY(6px)}18%{opacity:1}80%{opacity:1}100%{opacity:0;transform:translateY(-18px)}}
+.ch3m{position:relative;z-index:5;padding:1.5rem;font-size:clamp(.95rem,2.2vw,1.15rem);color:#fefce8;line-height:2}
+.ch3h{color:#f472b6;font-family:'Playfair Display',serif;font-size:1.1em;display:block;margin-top:.8rem}
+
+.vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:.65rem;width:100%;max-width:760px;max-height:380px;overflow-y:auto;padding:.4rem;margin:.8rem auto}
+.vc{background:rgba(168,85,247,.07);border:1px solid rgba(168,85,247,.2);border-radius:12px;padding:.85rem .65rem;cursor:pointer;transition:all .3s;min-height:76px;display:flex;align-items:center;justify-content:center}
+.vc:hover{background:rgba(168,85,247,.16);border-color:#a855f7;transform:translateY(-2px)}
+.vc.op{background:rgba(244,114,182,.1);border-color:#f472b6;cursor:default}
+.vl{font-size:1.35rem}.vt{display:none;font-size:.76rem;color:#e2d4f0;line-height:1.5;text-align:center}
+.vc.op .vl{display:none}.vc.op .vt{display:block}
+#vcnt{font-size:.83rem;color:#a855f7;margin-bottom:.4rem}
+
+.ba{position:relative;width:100%;max-width:640px;height:320px;margin:1rem auto;overflow:hidden;border-radius:18px;background:rgba(255,255,255,.02);border:.5px solid rgba(255,255,255,.05)}
+.bf{position:absolute;font-size:1.85rem;cursor:pointer;user-select:none;animation:flutter var(--fd,4s) ease-in-out infinite;animation-delay:var(--fa,0s);transition:transform .2s}
+.bf:hover{transform:scale(1.5)!important}
+@keyframes flutter{0%,100%{transform:translate(0,0) rotate(-6deg)}25%{transform:translate(26px,-16px) rotate(6deg)}50%{transform:translate(-16px,13px) rotate(-3deg)}75%{transform:translate(16px,-7px) rotate(4deg)}}
+#brev{min-height:1.6rem;margin-top:1rem;color:#f9a8d4;font-style:italic;font-size:.98rem;line-height:1.7;max-width:540px;opacity:0;transition:opacity .5s}
+
+.qq{font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2.8vw,1.55rem);color:#fefce8;margin-bottom:1.3rem;line-height:1.5}
+.qop{display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center;max-width:540px}
+.qo{padding:.7rem 1.25rem;border:1.5px solid rgba(168,85,247,.32);border-radius:50px;background:transparent;color:#e2d4f0;font-family:'Lora',serif;font-size:.88rem;cursor:pointer;transition:all .3s}
+.qo:hover{border-color:#a855f7;background:rgba(168,85,247,.12);transform:scale(1.04)}
+.qo.ch{border-color:#f472b6;color:#f9a8d4;background:rgba(244,114,182,.1)}
+#qr{margin-top:1.1rem;font-size:.98rem;color:#f472b6;font-style:italic;min-height:1.6rem;line-height:1.7;opacity:0;transition:opacity .5s}
+
+.leaf{cursor:pointer;transition:filter .3s}
+.leaf:hover{filter:brightness(1.5) drop-shadow(0 0 5px #4ade80)}
+#wsh{margin-top:1rem;font-size:1.02rem;color:#fde68a;font-style:italic;line-height:1.8;max-width:460px;opacity:0;transition:opacity .6s;min-height:1.8rem}
+
+#stxt{color:#fde68a;font-style:italic;font-size:.98rem;line-height:1.7;min-height:1.6rem;opacity:0;transition:opacity .6s;margin-top:.8rem}
+.cm{cursor:pointer;user-select:none;color:#a855f7;font-size:.88rem;margin-top:1.2rem;border:1px dashed rgba(168,85,247,.28);padding:.5rem 1.1rem;border-radius:30px;display:inline-block;transition:all .3s}
+.cm:hover{border-color:#a855f7;background:rgba(168,85,247,.09)}
+
+#s9{background:#050310}
+#cc{width:100%;max-width:660px;height:200px;display:block;margin:0 auto 1.5rem}
+.ft{font-family:'Playfair Display',serif;font-size:clamp(.95rem,2.4vw,1.35rem);color:#c4b5fd;line-height:2;opacity:0;transition:opacity 1.2s ease}
+.ft.vis{opacity:1}
+#fn{font-family:'Playfair Display',serif;font-size:clamp(2rem,6vw,4rem);color:#f472b6;letter-spacing:.18em;text-shadow:0 0 40px rgba(244,114,182,.45);margin:.5rem 0;opacity:0;transition:opacity 1.5s ease}
+#fn.vis{opacity:1}
+
+/* LETTER */
+#loverlay{display:none;position:fixed;inset:0;background:rgba(5,3,16,.94);z-index:2000;align-items:center;justify-content:center;padding:1.5rem}
+#loverlay.on{display:flex}
+#env{cursor:pointer;text-align:center}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.env-emoji{font-size:5rem;display:block;animation:pulse 2s ease-in-out infinite}
+#lpaper{display:none;background:linear-gradient(140deg,#fefce8,#fdf4ff);border-radius:20px;padding:2.4rem 2.2rem;text-align:left;box-shadow:0 8px 60px rgba(244,114,182,.22);max-width:500px;width:100%}
+#lbody{font-family:'Playfair Display',serif;font-size:1rem;color:#3b0764;line-height:2.2;white-space:pre-line;min-height:4rem}
+.lsig{font-family:'Playfair Display',serif;font-style:italic;color:#7c3aed;margin-top:1.8rem;text-align:right;font-size:1rem}
+.lclose{margin-top:1.5rem;width:100%;padding:.75rem;border:1.5px solid #a855f7;background:rgba(168,85,247,.08);color:#7c3aed;border-radius:50px;font-family:'Lora',serif;font-size:.9rem;cursor:pointer;transition:all .3s;display:block}
+.lclose:hover{background:rgba(168,85,247,.2)}
+
+.bp{position:fixed;border-radius:50%;pointer-events:none;z-index:500;animation:bpop 1.3s ease forwards}
+@keyframes bpop{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(0)}}
+.fh{position:fixed;pointer-events:none;font-size:1.1rem;z-index:500;animation:fup 2.8s ease forwards}
+@keyframes fup{0%{opacity:1;transform:translateY(0) rotate(0deg)}100%{opacity:0;transform:translateY(-100px) rotate(var(--r,15deg))}}
+
+#hint{position:fixed;bottom:12px;right:12px;font-size:.7rem;color:rgba(255,255,255,.16);z-index:100;pointer-events:none;transition:all .8s}
+
+.shoot{position:fixed;height:2px;border-radius:2px;pointer-events:none;z-index:5;animation:shoot linear infinite}
+@keyframes shoot{0%{left:-10%;opacity:0}5%{opacity:1}90%{opacity:.7}100%{left:110%;opacity:0}}
+
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:rgba(168,85,247,.3);border-radius:2px}
+</style>
+</head>
+<body>
+
+<div class="moon" onclick="moonClick(event)"></div>
+<div class="shoot" style="top:8%;width:110px;background:linear-gradient(90deg,transparent,rgba(255,255,220,.85));animation-duration:9s;animation-delay:2s;transform:rotate(14deg)"></div>
+<div class="shoot" style="top:22%;width:80px;background:linear-gradient(90deg,transparent,rgba(255,255,220,.6));animation-duration:13s;animation-delay:8s;transform:rotate(11deg)"></div>
+
+<div id="prog"></div>
+<div id="clbl"></div>
+<div id="ndots"></div>
+<div id="hint">✦ try clicking the moon</div>
+
+<!-- S0 OPENING -->
+<div class="scr on" id="s0">
+  <div style="max-width:580px">
+    <span class="ql" id="ql1">Hi Shang.</span>
+    <span class="ql" id="ql2">Someone spent way too much time making this.</span>
+    <span class="ql pink" id="ql3">Unfortunately for you, you're the reason why.</span>
+    <br>
+    <button class="btn hid" id="b0" onclick="go(1)">Continue ✦</button>
+  </div>
+</div>
+
+<!-- S1 FLOWER -->
+<div class="scr" id="s1">
+  <div class="ct">Chapter I — The Flower</div>
+  <p class="mg">A single flower sits here, just for you.<br><span style="font-size:.82rem;color:#a855f7;display:block;margin-top:.3rem">Click it to see what happens ✨</span></p>
+  <div id="fw" onclick="clickFlower()"><div class="fc" id="fc"></div></div>
+  <div id="fq"></div>
+  <button class="btn hid" id="b1" onclick="go(2)">Continue ✦</button>
+</div>
+
+<!-- S2 UNIVERSE -->
+<div class="scr" id="s2">
+  <div class="ct">Chapter II — Create</div>
+  <p class="mg">What should we create today, Shang?</p>
+  <div class="ug">
+    <button class="ub" onclick="createUni('star')">⭐ A Star</button>
+    <button class="ub" onclick="createUni('moon')">🌙 A Moon</button>
+    <button class="ub" onclick="createUni('galaxy')">🌌 A Galaxy</button>
+    <button class="ub" onclick="createUni('dream')">✨ A Dream</button>
+  </div>
+  <canvas id="uc"></canvas>
+  <div id="ur"></div>
+  <button class="btn hid" id="b2" onclick="go(3)">Continue ✦</button>
+</div>
+
+<!-- S3 WHY -->
+<div class="scr" id="s3">
+  <div class="ct">Chapter III — Why You're Here</div>
+  <div class="ch3b">
+    <span class="fl" style="top:10%;left:8%;animation-delay:0s">You're probably curious.</span>
+    <span class="fl" style="top:28%;right:10%;animation-delay:1.8s">You look cute when confused.</span>
+    <span class="fl" style="top:52%;left:14%;animation-delay:3.5s">Yes, this gets weirder.</span>
+    <span class="fl" style="top:70%;right:18%;animation-delay:5s">Keep going. You'll like it.</span>
+    <span class="fl" style="top:18%;right:28%;animation-delay:6.8s">Something wonderful is ahead.</span>
+    <div class="ch3m">
+      This isn't a quiz.<br>This isn't an ad.<br>This isn't homework.<br>
+      <span class="ch3h">This is just a place someone built because they wanted to make you smile.</span>
+    </div>
+  </div>
+  <button class="btn" onclick="go(4)">Continue ✦</button>
+</div>
+
+<!-- S4 VAULT -->
+<div class="scr" id="s4">
+  <div class="ct">Chapter IV — The Compliment Vault</div>
+  <div id="vcnt">0 opened</div>
+  <p style="font-size:.8rem;color:#a855f7;margin-bottom:.5rem">Click the cards to unlock them ✦</p>
+  <div class="vg" id="vg"></div>
+  <button class="btn hid" id="b4" onclick="go(5)">Continue ✦</button>
+</div>
+
+<!-- S5 BUTTERFLIES -->
+<div class="scr" id="s5">
+  <div class="ct">Chapter V — The Butterfly Room</div>
+  <p class="mg" style="font-size:.88rem">Click a butterfly to discover its secret 🦋</p>
+  <div class="ba" id="ba"></div>
+  <div id="brev"></div>
+  <button class="btn hid" id="b5" onclick="go(6)">Continue ✦</button>
+</div>
+
+<!-- S6 QUIZ -->
+<div class="scr" id="s6">
+  <div class="ct">Chapter VI — Know Yourself?</div>
+  <div id="qw">
+    <div class="qq" id="qq"></div>
+    <div class="qop" id="qop"></div>
+    <div id="qr"></div>
+    <button class="btn hid" id="bqn" onclick="nextQ()">Next ✦</button>
+  </div>
+  <button class="btn hid" id="b6" onclick="go(7)">Continue ✦</button>
+</div>
+
+<!-- S7 TREE -->
+<div class="scr" id="s7">
+  <div class="ct">Chapter VII — The Wishing Tree</div>
+  <p class="mg" style="font-size:.84rem;margin-bottom:.5rem">Click a leaf to receive a wish 🍃</p>
+  <svg viewBox="0 0 500 360" style="width:100%;max-width:440px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg">
+    <path d="M250 360 Q246 310 248 272 Q250 238 250 202" stroke="#6b4c2e" stroke-width="15" fill="none" stroke-linecap="round"/>
+    <path d="M250 262 Q226 245 196 230" stroke="#6b4c2e" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M250 244 Q274 228 304 213" stroke="#6b4c2e" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M250 228 Q232 202 212 188" stroke="#6b4c2e" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M250 228 Q268 202 288 188" stroke="#6b4c2e" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M250 205 Q250 175 250 155" stroke="#6b4c2e" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <ellipse class="leaf" cx="180" cy="216" rx="30" ry="20" fill="#22c55e" fill-opacity=".78" onclick="showWish(0)"/>
+    <ellipse class="leaf" cx="310" cy="200" rx="27" ry="18" fill="#4ade80" fill-opacity=".75" onclick="showWish(1)"/>
+    <ellipse class="leaf" cx="198" cy="172" rx="28" ry="19" fill="#86efac" fill-opacity=".72" onclick="showWish(2)"/>
+    <ellipse class="leaf" cx="292" cy="170" rx="25" ry="17" fill="#22c55e" fill-opacity=".72" onclick="showWish(3)"/>
+    <ellipse class="leaf" cx="250" cy="138" rx="33" ry="22" fill="#4ade80" fill-opacity=".8" onclick="showWish(4)"/>
+    <ellipse class="leaf" cx="164" cy="183" rx="20" ry="14" fill="#86efac" fill-opacity=".62" onclick="showWish(5)"/>
+    <ellipse class="leaf" cx="334" cy="178" rx="20" ry="14" fill="#22c55e" fill-opacity=".62" onclick="showWish(6)"/>
+    <ellipse class="leaf" cx="249" cy="108" rx="29" ry="19" fill="#4ade80" fill-opacity=".72" onclick="showWish(7)"/>
+  </svg>
+  <div id="wsh"></div>
+  <button class="btn hid" id="b7" onclick="go(8)">Continue ✦</button>
+</div>
+
+<!-- S8 SECRETS -->
+<div class="scr" id="s8">
+  <div class="ct">Chapter VIII — Hidden Secrets</div>
+  <p class="mg">Some things are only found by those who look closely.<br>
+  <span style="font-size:.85rem;color:#fde68a;display:block;margin-top:.6rem">✦ Click the text below 5 times &nbsp;|&nbsp; ✦ Click the moon &nbsp;|&nbsp; ✦ Catch a shooting star</span></p>
+  <div class="cm" onclick="secClick(event)">← Click me →</div>
+  <div id="scnt" style="color:#f472b6;margin-top:.7rem;font-size:1rem;min-height:1.2rem"></div>
+  <div id="stxt"></div>
+  <button class="btn hid" id="b8" onclick="go(9)">Continue ✦</button>
+</div>
+
+<!-- S9 FINALE -->
+<div class="scr" id="s9" style="background:#050310">
+  <canvas id="cc"></canvas>
+  <div style="max-width:540px">
+    <div class="ft" id="ft1">Out of billions of people...</div>
+    <div id="fn">SHANG</div>
+    <div class="ft" id="ft2">You're the one this website was made for.</div>
+    <div class="ft" id="ft3" style="color:#f9a8d4;font-style:italic">Thanks for visiting your corner of the universe. 🌸</div>
+    <button class="btn" style="margin-top:1.8rem" onclick="openLetter()">💌 Open your letter</button>
+    <br>
+    <button class="btn hid" id="brestart" style="margin-top:.5rem;border-color:rgba(255,255,255,.18);color:rgba(255,255,255,.3);font-size:.8rem" onclick="restart()">Restart the adventure ✦</button>
+  </div>
+</div>
+
+<!-- LETTER OVERLAY -->
+<div id="loverlay">
+  <div style="max-width:500px;width:100%;text-align:center">
+    <div id="env" onclick="openEnvelope()">
+      <span class="env-emoji">💌</span>
+      <p style="color:#c4b5fd;margin-top:.8rem;font-family:'Lora',serif;font-style:italic;font-size:.9rem">tap to open</p>
+    </div>
+    <div id="lpaper">
+      <div style="text-align:center;font-size:1.4rem;margin-bottom:1.4rem">🌸</div>
+      <p id="lbody"></p>
+      <p class="lsig">— Xhua 🌸</p>
+      <button class="lclose" onclick="closeLetter()">Close ✦</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var cur=0,fc=0,vo=0,bc=0,qi=0,wc=0,sc=0,mc=0;
+var chapNames=['','Ch. I','Ch. II','Ch. III','Ch. IV','Ch. V','Ch. VI','Ch. VII','Ch. VIII','Finale'];
+
+function setupUI(){
+  document.getElementById('prog').style.width=(cur/9*100)+'%';
+  document.getElementById('clbl').textContent=chapNames[cur]||'';
+  var nd=document.getElementById('ndots');nd.innerHTML='';
+  for(var i=0;i<10;i++){var d=document.createElement('div');d.className='nd'+(i===cur?' cur':i<cur?' done':'');nd.appendChild(d);}
+}
+
+function go(n){
+  document.getElementById('s'+cur).classList.remove('on');
+  cur=n;
+  document.getElementById('s'+cur).classList.add('on');
+  window.scrollTo(0,0);setupUI();
+  if(n===1)initFlower();
+  if(n===4)initVault();
+  if(n===5)initBflies();
+  if(n===6)initQuiz();
+  if(n===9)initFinale();
+}
+
+function showBtn(id){
+  var b=document.getElementById(id);if(!b)return;
+  b.classList.remove('hid');
+  b.style.opacity='0';b.style.transform='translateY(10px)';
+  b.style.transition='opacity .6s,transform .6s';
+  setTimeout(function(){b.style.opacity='1';b.style.transform='translateY(0)';},30);
+}
+
+// OPENING
+function animOpen(){
+  setTimeout(function(){document.getElementById('ql1').classList.add('vis');},500);
+  setTimeout(function(){document.getElementById('ql2').classList.add('vis');},1400);
+  setTimeout(function(){document.getElementById('ql3').classList.add('vis');},2300);
+  setTimeout(function(){showBtn('b0');},3200);
+}
+
+// FLOWER
+function initFlower(){
+  fc=0;
+  var w=document.getElementById('fw');
+  w.innerHTML='<div class="fc" id="fc"></div>';
+  for(var i=0;i<8;i++){var p=document.createElement('div');p.className='pt';p.style.transform='rotate('+i*45+'deg) translateX(-25px) translateY(-75px) scaleY(0)';w.appendChild(p);}
+  var fq=document.getElementById('fq');fq.style.opacity='0';fq.textContent='';
+}
+var fM=['Most flowers bloom because of sunlight. This one blooms because you clicked it.','See? You have power over beautiful things.','One more time... go on, Shang.'];
+function clickFlower(){
+  fc++;
+  var pts=document.querySelectorAll('.pt'),fcE=document.getElementById('fc'),fq=document.getElementById('fq');
+  if(fc===1){pts[0].style.transform='rotate(0deg) translateX(-25px) translateY(-155px) scaleY(1)';pts[0].style.opacity='.3';fq.textContent=fM[0];fq.style.opacity='1';}
+  else if(fc===2){for(var i=0;i<pts.length;i++){(function(x){setTimeout(function(){pts[x].style.transform='rotate('+x*45+'deg) translateX(-25px) translateY(-95px) scaleY(1)';},x*70);})(i);}fcE.style.boxShadow='0 0 38px rgba(251,191,36,.9)';fcE.style.transform='translate(-50%,-50%) scale(1.4)';fq.textContent=fM[1];fq.style.opacity='1';}
+  else if(fc>=3){
+    for(var j=0;j<pts.length;j++){pts[j].style.opacity='0';pts[j].style.transform='rotate('+j*45+'deg) translateX(-25px) translateY(-180px) scaleY(0)';}
+    fcE.style.transform='translate(-50%,-50%) scale(0)';
+    var r=document.getElementById('fw').getBoundingClientRect();
+    var em=['❤️','🌸','✨','💫','🌺','💕','🌟'];
+    for(var k=0;k<48;k++){(function(ki){var h=document.createElement('div');h.className='fh';h.textContent=em[ki%em.length];h.style.left=(r.left+r.width/2-25+Math.random()*50)+'px';h.style.top=(r.top+r.height/2)+'px';h.style.animationDelay=(Math.random()*.7)+'s';h.style.fontSize=(.7+Math.random()*.9)+'rem';h.style.setProperty('--r',(Math.random()*40-20)+'deg');document.body.appendChild(h);setTimeout(function(){if(h.parentNode)h.parentNode.removeChild(h);},3000);})(k);}
+    fq.textContent='✨ And just like that... the world changed.';fq.style.color='#fde68a';
+    setTimeout(function(){showBtn('b1');},1800);
+  }
+}
+
+// UNIVERSE
+var uR={star:'Interesting choice, Shang. A star — just like you, it gives off light even when it doesn\'t try to.',moon:'The moon. Patient, constant, beautiful. It shows up every single night without being asked.',galaxy:'A galaxy. Millions of worlds, and you\'re curious about all of them. That tracks.',dream:'A dream. The best things always start exactly like that.'};
+function createUni(type){
+  var c=document.getElementById('uc');c.width=c.offsetWidth||540;c.height=240;
+  var x=c.getContext('2d'),cx=c.width/2,cy=c.height/2;x.clearRect(0,0,c.width,c.height);
+  if(type==='star'){x.save();x.translate(cx,cy);x.beginPath();for(var i=0;i<5;i++){var a=-Math.PI/2+i*4*Math.PI/5,b=-Math.PI/2+(i*4+2)*Math.PI/5;if(i===0)x.moveTo(Math.cos(a)*78,Math.sin(a)*78);else x.lineTo(Math.cos(a)*78,Math.sin(a)*78);x.lineTo(Math.cos(b)*34,Math.sin(b)*34);}x.closePath();x.fillStyle='rgba(251,191,36,.92)';x.fill();x.strokeStyle='rgba(255,220,100,.5)';x.lineWidth=2;x.stroke();x.restore();for(var j=0;j<35;j++){x.beginPath();x.arc(Math.random()*c.width,Math.random()*c.height,Math.random()*1.4+.3,0,Math.PI*2);x.fillStyle='rgba(255,255,200,'+(Math.random()*.6+.2)+')';x.fill();}}
+  else if(type==='moon'){x.beginPath();x.arc(cx,cy,72,0,Math.PI*2);x.fillStyle='rgba(253,230,138,.88)';x.fill();x.beginPath();x.arc(cx+26,cy-20,60,0,Math.PI*2);x.fillStyle='rgba(8,5,26,.88)';x.fill();for(var m=0;m<22;m++){x.beginPath();x.arc(Math.random()*c.width,Math.random()*c.height,Math.random()*1.2,0,Math.PI*2);x.fillStyle='rgba(255,255,255,'+(Math.random()*.4+.1)+')';x.fill();}}
+  else if(type==='galaxy'){for(var g=0;g<210;g++){var ang=Math.random()*Math.PI*2,dist=Math.random()*115,sp=ang+dist*.06;x.beginPath();x.arc(cx+Math.cos(sp)*dist,cy+Math.sin(sp)*dist*.46,Math.random()*2.1,0,Math.PI*2);x.fillStyle='hsla('+(200+Math.random()*80)+',75%,72%,'+(Math.random()*.85+.15)+')';x.fill();}}
+  else{var gr=x.createRadialGradient(cx,cy,0,cx,cy,125);gr.addColorStop(0,'rgba(244,114,182,.55)');gr.addColorStop(.5,'rgba(168,85,247,.32)');gr.addColorStop(1,'transparent');x.fillStyle=gr;x.fillRect(0,0,c.width,c.height);var em=['✨','🌸','💫','🌙','⭐','🌺','💖'];x.font='24px serif';for(var e=0;e<em.length;e++)x.fillText(em[e],cx-112+e*(c.width>380?46:35),cy+Math.sin(e*1.1)*32);}
+  document.getElementById('ur').textContent=uR[type];document.getElementById('ur').style.opacity='1';showBtn('b2');
+}
+
+// VAULT
+var comps=['The world needs more people who are unapologetically themselves.','Some people are interesting. You\'re unforgettable.','You don\'t know how many people smile because you\'re around.','There\'s a warmth about you that\'s impossible to fake.','You make even ordinary moments feel like they matter.','Your curiosity is one of the most beautiful things about you.','You carry yourself with a kind of quiet grace.','You\'re the kind of person people remember years later.','The way you see the world is actually a gift.','You\'re braver than you think and stronger than you know.','Your smile could fix a bad day. Genuinely.','You make people feel seen without even trying.','There\'s something magnetic about the way you carry yourself.','You have a rare kind of depth that most people never find.','You\'re more than enough, exactly as you are right now.','Your presence changes the energy of a room.','You make people feel comfortable being themselves.','You probably don\'t realise how often you cross people\'s minds.','The smallest kind thing you do leaves the biggest impression.','You\'re the kind of rare that people write about.','Your kindness is quiet but it reaches everywhere.','You make the world around you softer somehow.','You inspire people without even knowing it.','You\'re living proof that good people still exist.','Your laughter is genuinely one of the best sounds.','People feel lucky when they get to know you.','You have an eye for beauty in things others walk past.','You\'re the type who makes life feel more meaningful.','You handle things with a grace that people deeply respect.','You matter more than you know, to more people than you realise.'];
+function initVault(){
+  vo=0;var g=document.getElementById('vg');g.innerHTML='';document.getElementById('vcnt').textContent='0 opened';
+  for(var i=0;i<comps.length;i++){(function(txt){var c=document.createElement('div');c.className='vc';c.innerHTML='<span class="vl">🔒</span><span class="vt">'+txt+'</span>';c.onclick=function(){if(c.classList.contains('op'))return;c.classList.add('op');vo++;document.getElementById('vcnt').textContent=vo+' of '+comps.length+' opened';var r=c.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,'#a855f7');if(vo>=5)showBtn('b4');};g.appendChild(c);})(comps[i]);}
+}
+
+// BUTTERFLIES
+var bM=['Why did the butterfly refuse to fly? It already had wings — what more do you want from it? 😄','The person who made this smiled every time they thought about showing it to you.','She is both hellfire and holy water, and the hazard of her is deciding which she\'ll be for you.','You are exactly where you need to be right now.','Fun fact: Butterflies taste with their feet. You\'re already more interesting than a butterfly.','There is nothing more rare, nor more beautiful, than a woman being unapologetically herself.','You deserve every good thing that is quietly making its way to you.','She was a girl who knew how to be happy even when she was sad.','You just made a butterfly very happy by clicking it. True story.','The stars tonight are the same ones people have wished on for thousands of years.','You make the world around you softer somehow.','Somewhere out there is a universe that has never been seen by anyone. A bit like you.','Keep going. You\'re doing great.'];
+function initBflies(){
+  bc=0;var area=document.getElementById('ba');area.innerHTML='';
+  for(var i=0;i<8;i++){(function(){var b=document.createElement('div');b.className='bf';b.textContent='🦋';b.style.left=(6+Math.random()*82)+'%';b.style.top=(6+Math.random()*80)+'%';b.style.setProperty('--fd',(3+Math.random()*3)+'s');b.style.setProperty('--fa',(Math.random()*2)+'s');b.onclick=function(e){e.stopPropagation();bc++;var rv=document.getElementById('brev');rv.style.opacity='0';var msg=bM[Math.floor(Math.random()*bM.length)];setTimeout(function(){rv.textContent=msg;rv.style.opacity='1';},260);burst(e.clientX,e.clientY,'#f472b6');if(bc>=3)showBtn('b5');};area.appendChild(b);})();}
+}
+
+// QUIZ
+var quiz=[{q:'Which superpower would you choose?',o:['Fly','Read minds','Teleport','Stop time'],r:['Freedom looks good on you.','You already know more than people think.','Always one step ahead — classic.','You value moments. That\'s rare and beautiful.']},{q:'Which world would you live in?',o:['Underwater kingdom','Forest of magic','City in the clouds','Desert of stars'],r:['Deep, mysterious, full of hidden things. Makes sense.','You belong somewhere enchanted.','You were made for heights.','A stargazer at heart. The universe agrees.']},{q:'What would your dragon look like?',o:['Silver with moonlight scales','Deep green and ancient','Pink with golden fire','Midnight black and silent'],r:['Rare and otherworldly. Like its owner.','Wise beyond years — people underestimate you.','Warm, fierce, and completely unforgettable.','Mysterious and powerful. People notice.']},{q:'Your perfect evening is...',o:['Stargazing alone','Laughing with friends','Exploring somewhere new','Cozy at home'],r:['You recharge in quiet moments — that\'s strength, not shyness.','Your energy raises the whole room\'s vibe.','Curiosity is your compass. It takes you somewhere beautiful.','You know how to make a space feel like home.']}];
+function initQuiz(){qi=0;loadQ();}
+function loadQ(){
+  if(qi>=quiz.length){document.getElementById('qw').style.display='none';showBtn('b6');return;}
+  var q=quiz[qi];document.getElementById('qq').textContent=q.q;
+  var qr=document.getElementById('qr');qr.style.opacity='0';qr.textContent='';
+  document.getElementById('bqn').classList.add('hid');document.getElementById('bqn').style.opacity='0';
+  var op=document.getElementById('qop');op.innerHTML='';
+  for(var i=0;i<q.o.length;i++){(function(idx){var b=document.createElement('button');b.className='qo';b.textContent=q.o[idx];b.onclick=function(){document.querySelectorAll('.qo').forEach(function(x){x.style.opacity='.3';});b.style.opacity='1';b.classList.add('ch');qr.textContent=q.r[idx];qr.style.opacity='1';showBtn('bqn');};op.appendChild(b);})(i);}
+}
+function nextQ(){qi++;loadQ();}
+
+// WISHES
+var wishes=['I hope you achieve everything you\'re secretly working toward.','I hope life surprises you in the best ways.','I hope today was kinder to you than yesterday.','I hope you feel how much you are loved, even on the hard days.','I hope the things you\'ve been waiting for arrive soon.','I hope your dreams get every bit of effort they deserve — and they do.','I hope you get the rest, peace, and joy you deserve.','I hope you find exactly what you\'re looking for, and then some.'];
+function showWish(i){var d=document.getElementById('wsh');d.style.opacity='0';setTimeout(function(){d.textContent=wishes[i];d.style.opacity='1';},280);wc++;burst(event.clientX,event.clientY,'#4ade80');if(wc>=3)showBtn('b7');}
+
+// SECRETS
+var sM=['You found something. 4 more clicks to unlock the final secret.','Two clicks. Getting warmer 🔥','Three. You don\'t give up easily. Good sign.','Four... almost there. Keep going.','🌟 The universe was built with exactly one person in mind. That person is reading this right now.'];
+function secClick(e){sc=Math.min(sc+1,5);document.getElementById('scnt').textContent='Clicks: '+sc;var st=document.getElementById('stxt');st.textContent=sM[sc-1];st.style.opacity='1';burst(e.clientX,e.clientY,'#f472b6');if(sc>=5)setTimeout(function(){showBtn('b8');},500);}
+function moonClick(e){mc++;burst(e.clientX,e.clientY,'#fde68a');if(mc>=5)showHint('🌙 The moon remembers every wish ever made under it... including yours.');}
+
+// FINALE
+function initFinale(){
+  var c=document.getElementById('cc');c.width=c.offsetWidth||660;c.height=200;
+  var x=c.getContext('2d');
+  var ld={S:[[0,0],[1,0],[1,.5],[0,.5],[0,1],[1,1]],H:[[0,0],[0,1],[0,.5],[1,.5],[1,0],[1,1]],A:[[0,1],[.5,0],[1,1],[.18,.62],[.82,.62]],N:[[0,1],[0,0],[1,1],[1,0]],G:[[1,.15],[.5,0],[0,.2],[0,.8],[.5,1],[1,.85],[1,.5],[.55,.5]]};
+  var letters='SHANG',lw=44,lh=66,totalW=letters.length*(lw+16)-16,sx=(c.width-totalW)/2,prog=0;
+  function draw(){
+    x.clearRect(0,0,c.width,c.height);
+    for(var i=0;i<90;i++){var bx=Math.sin(i*137.5)*(c.width/2)+c.width/2,by=Math.cos(i*137.5)*(c.height/2)+c.height/2;x.beginPath();x.arc(bx,by,.7,0,Math.PI*2);x.fillStyle='rgba(255,255,255,.18)';x.fill();}
+    for(var li=0;li<letters.length;li++){var ltr=ld[letters[li]],ox=sx+li*(lw+16),oy=(c.height-lh)/2,lp=Math.max(0,Math.min(1,(prog*letters.length-li))),vis=Math.ceil(ltr.length*lp);x.beginPath();for(var pi=0;pi<vis;pi++){var px=ox+ltr[pi][0]*lw,py=oy+ltr[pi][1]*lh;if(pi===0)x.moveTo(px,py);else x.lineTo(px,py);}x.strokeStyle='rgba(244,114,182,.6)';x.lineWidth=1.5;x.stroke();for(var di=0;di<vis;di++){var dpx=ox+ltr[di][0]*lw,dpy=oy+ltr[di][1]*lh;x.beginPath();x.arc(dpx,dpy,3,0,Math.PI*2);x.fillStyle='rgba(244,114,182,.95)';x.fill();}}
+    if(prog<1){prog+=.013;requestAnimationFrame(draw);}
+  }
+  draw();
+  setTimeout(function(){document.getElementById('ft1').classList.add('vis');},1000);
+  setTimeout(function(){document.getElementById('fn').classList.add('vis');},2600);
+  setTimeout(function(){document.getElementById('ft2').classList.add('vis');},4000);
+  setTimeout(function(){document.getElementById('ft3').classList.add('vis');},5300);
+}
+
+// LETTER
+function openLetter(){
+  var ol=document.getElementById('loverlay');
+  ol.classList.add('on');
+  document.getElementById('env').style.display='block';
+  document.getElementById('env').style.opacity='1';
+  document.getElementById('env').style.transform='scale(1)';
+  document.getElementById('lpaper').style.display='none';
+  document.getElementById('lbody').textContent='';
+}
+function openEnvelope(){
+  var env=document.getElementById('env');
+  env.style.transition='opacity .5s,transform .5s';
+  env.style.opacity='0';env.style.transform='scale(.8)';
+  setTimeout(function(){
+    env.style.display='none';
+    var lp=document.getElementById('lpaper');
+    lp.style.display='block';lp.style.opacity='0';lp.style.transform='translateY(16px)';
+    lp.style.transition='opacity .7s,transform .7s';
+    setTimeout(function(){
+      lp.style.opacity='1';lp.style.transform='translateY(0)';
+      var txt="Hi Shang,\n\nThis is Xhua.\n\nI like you very much and I think we could lowkey work. :P\n\nI made every single bit of this website for you.\nEvery flower, every butterfly, every wish on that tree — all of it was for you.\n\nHope it made you smile, even just a little.";
+      var body=document.getElementById('lbody'),idx=0;
+      body.textContent='';
+      var timer=setInterval(function(){
+        body.textContent+=txt[idx];idx++;
+        if(idx>=txt.length){clearInterval(timer);setTimeout(function(){showBtn('brestart');},600);}
+      },25);
+    },100);
+  },500);
+}
+function closeLetter(){
+  var ol=document.getElementById('loverlay');
+  ol.style.transition='opacity .4s';ol.style.opacity='0';
+  setTimeout(function(){ol.classList.remove('on');ol.style.opacity='1';},400);
+  showBtn('brestart');
+}
+
+// UTILS
+function burst(px,py,color){
+  for(var i=0;i<12;i++){var p=document.createElement('div'),a=Math.random()*Math.PI*2,d=40+Math.random()*85;p.className='bp';p.style.cssText='left:'+px+'px;top:'+py+'px;width:'+(4+Math.random()*5)+'px;height:'+(4+Math.random()*5)+'px;background:'+color;p.style.setProperty('--tx',Math.cos(a)*d+'px');p.style.setProperty('--ty',Math.sin(a)*d+'px');document.body.appendChild(p);setTimeout(function(){if(p.parentNode)p.parentNode.removeChild(p);},1400);}
+}
+function showHint(msg){var h=document.getElementById('hint');h.textContent=msg;h.style.color='rgba(253,230,138,.8)';h.style.fontSize='.8rem';setTimeout(function(){h.style.color='rgba(255,255,255,.16)';h.style.fontSize='.7rem';h.textContent='✦ try clicking the moon';},6000);}
+function restart(){
+  fc=0;vo=0;bc=0;qi=0;wc=0;sc=0;mc=0;
+  document.getElementById('s'+cur).classList.remove('on');cur=0;
+  document.getElementById('s0').classList.add('on');
+  ['ql1','ql2','ql3'].forEach(function(id){document.getElementById(id).classList.remove('vis');});
+  document.getElementById('b0').classList.add('hid');document.getElementById('b0').style.opacity='0';
+  setupUI();setTimeout(animOpen,300);
+}
+
+setupUI();animOpen();
+</script>
+</body>
+</html>
